@@ -6,50 +6,82 @@
     <!-- <link rel="stylesheet" href="style.css"> -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- <style type="text/tailwindcss">
-        .container { 
-            @apply bg-red-500 text-white p-2;
+    <style type="text/tailwindcss">
+        .base-input{
+            @apply border border-green-800 rounded-md p-2;
         }
-    </style> -->
+        .base-label {
+            @apply text-green-950 text-sm;
+        }
+        .form-input-group
+        {
+            @apply flex flex-col gap-1;
+        }
+        .radio-container {
+            @apply flex items-center gap-4 has-[:checked]:border-green-400 has-[:checked]:bg-green-700
+            text-gray-500 has-[:checked]:text-white;
+        }
+    </style>
 
     <title>Adi's Store</title>
 </head>
 <body>
 
-    <div id="container_1" class="bg-red-500 text-white p-2">
-        <h1>This is first title</h1>
-        <h2>This is first title</h2>
-        <h3>This is first title</h3>
-    </div>
-    
-    <section id="container_2" class="bg-blue-500 text-gray-50 p-2">
-        <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore eligendi iusto quod, rem aliquam, perferendis dolorum inventore atque fugit, molestias repellat provident. Blanditiis debitis voluptates dicta impedit alias, ipsam repudiandae.
-        </p>
-    
-     
-       <a href="https://google.com" target="_blank" rel="noopener noreferrer">
-        Click to visit Google
-       </a>
-    </section>
-   
+    <div class="bg-green-100 h-screen w-screen grid place-items-center">
+        <div class="bg-white max-w-md p-6 rounded-xl shadow">
+            <h1 class="text-3xl mb-6">Contact us</h1>
 
-    <div class="container">
-        Container 3
+            <form action="https://example.com/asdas"
+            method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                 <div class="form-input-group">
+                    <label for="first_name" class="base-label">First name *</label>
+                    <input type="text" name="first_name" id="" class="base-input" />
+                 </div>
+
+
+                 <div class="form-input-group">
+                    <label for="last_name" class="base-label">Last name *</label>
+                    <input type="text" name="last_name" id="" class="base-input" />
+                 </div>
+
+
+
+                 <div class="form-input-group col-span-2">
+                    <label for="email" class="base-label">Email *</label>
+                    <input type="email" name="email" id="" class="base-input" />
+                 </div>
+                
+                 <div class="form-input-group col-span-2">
+                    <label for="enquiry" class="base-label">Query type *</label>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                        <div class="radio-container base-input">
+                            <input type="radio" name="enquiry" value="general" id="">
+
+                            <span class="text-sm">General Enquiry</span>
+                        </div>
+                        <div class="radio-container base-input">
+                            <input type="radio" name="enquiry" value="request" id="">
+                            <span class="text-sm">Support Request</span>
+                        </div>
+                    </div>
+                 </div>
+
+                
+                 <div class="form-input-group col-span-2">
+                    <label for="message" class="base-label">Message *</label>
+                    <textarea name="message" class="base-input" id="" cols="30" rows="4"></textarea>
+                 </div>
+
+
+                 <div class="col-span-2 flex items-center gap-3">
+                    <input type="checkbox" name="tnc" id="" />
+                    <span class="base-label">I consent to being contacted by the team</span>
+                 </div>
+
+                 <button class="col-span-2 bg-green-700 text-green-100 p-2.5 rounded-md" type="submit">Submit</button>
+            </form>
+        </div>
     </div>
 
-    <div class="container">
-        Container 4
-    </div>
-
-    <div class="container">
-        Container 5
-    </div>
-
-    <div class="flex justify-evenly">
-        <div class="bg-pink-500 h-48 w-48"></div>
-        <div class="bg-blue-500 h-48 w-48"></div>
-        <div class="bg-green-500 h-48 w-48"></div>
-    </div>
 </body>
 </html>
