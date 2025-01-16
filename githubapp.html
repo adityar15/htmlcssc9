@@ -15,7 +15,8 @@
             <button class="bg-blue-500 text-white px-4 py-2.5 rounded-r">Search</button>
         </form>
 
-        <div>
+        <!-- add id and css class of hidden -->
+        <div class="hidden" id="user-info">
             <div class="flex items-center gap-2">
                 <img src="" alt="user image" id="userimage" 
                 class="w-16 h-16 rounded-full object-cover object-center" />
@@ -24,17 +25,17 @@
             
             <div>
                 <span>Public repos</span>
-                <span id="public_repos">100</span>
+                <!-- removed the value 100 -->
+                <span id="public_repos"></span>
             </div>
 
             <div>
                 <span>Followers</span>
-                <span id="followers">200</span>
+                <!-- removed the value 200 -->
+                <span id="followers"></span>
             </div>
-
-
         </div>
-
+        <p id="error" class="text-red-500 my-2"></p>
     </main>
     <script src="./script.js"></script>
 </body>
