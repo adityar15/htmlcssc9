@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <main class="max-w-xl grid h-96 place-items-center mx-auto p-6">
+
+      <div class="grid grid-cols-2 gap-2">
+        <form action="" id="mt-form" class="flex flex-col items-center w-full gap-5">
+            <div class="w-full">
+                <label for="amount" class="block text-sm/6 font-medium text-gray-900">Mortgage amount</label>
+                <div class="mt-2 flex">
+                    <div
+                        class="flex shrink-0 items-center rounded-l-md bg-white px-3 text-base text-gray-500 outline outline-1 -outline-offset-1 outline-gray-300 sm:text-sm/6">
+                        £</div>
+                    <input type="number" name="amount"
+                        class="-ml-px block w-full grow rounded-r-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                        placeholder="Amount you want to borrow">
+                </div>
+            </div>
+
+
+            <div class="grid grid-cols-2 gap-5">
+                <div class="w-full">
+                    <label for="term" class="block text-sm/6 font-medium text-gray-900">Term</label>
+                    <div class="mt-2 flex">
+
+                        <input type="number" name="term"
+                            class="-ml-px block w-full grow rounded-l-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                            placeholder="1">
+                        <div
+                            class="flex shrink-0 items-center rounded-r-md bg-white px-3 text-base text-gray-500 outline outline-1 -outline-offset-1 outline-gray-300 sm:text-sm/6">
+                            years</div>
+                    </div>
+                </div>
+
+                <div class="w-full">
+                    <label for="interest" class="block text-sm/6 font-medium text-gray-900">Interest</label>
+                    <div class="mt-2 flex">
+
+                        <input type="number" name="interest"
+                            class="-ml-px block w-full grow rounded-l-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                            placeholder="5">
+                        <div
+                            class="flex shrink-0 items-center rounded-r-md bg-white px-3 text-base text-gray-500 outline outline-1 -outline-offset-1 outline-gray-300 sm:text-sm/6">
+                            %</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <button type="submit" class="bg-blue-500 text-white w-full px-4 py-1.5 rounded">
+                Calculate
+            </button>
+        </form>
+
+        <div class="grid place-items-center">
+            <div class="h-full px-6 hidden" id="result">
+                <h2 class="text-xl font-bold">Your result</h2>
+                <p class="text-sm mt-2">
+                    Based on the information you provided, your monthly payment will be as follows:
+                </p>
+    
+                <div class="h-40">
+                    <div>
+                        <div class="mt-2 flex flex-col my-3">
+                            <span id="monthly-payment" class="text-4xl">600</span>
+                            <span>Monthly payment</span>     
+                        </div>
+                        
+                        <div class="flex flex-col gap-1">
+                            <div>
+                                <span>Total payment</span>
+                                <span id="total-payment">500</span>
+                            </div>
+                
+                            <div>
+                                <span>Total interest</span>
+                                <span id="total-interest">400</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+    
+            <p id="error" class="text-red-500"></p>
+        </div>
+      </div>
+    </main>
+    <script src="./mortgage.js"></script>
+</body>
+
+</html>
